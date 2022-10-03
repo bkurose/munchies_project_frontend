@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import HomePage from "./components/HomePage";
+import Navbar from "./components/Navbar";
+import Favorites from "./components/Favorites";
+import TopRestaraunts from "./components/TopRestaraunts";
+import {Switch, Route, useHistory} from "react-router-dom";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  return (   
+ <div className="container">
+    <Navbar />
+    
+    <Route exact path = "/homepage">
+    <HomePage  />
+    </ Route>
+    <Switch>
+
+      <Route exact path = "/favorites">
+    <Favorites />
+    </ Route>
+
+    <Route exact path = "/toprestaurants">
+    <TopRestaraunts />
+    </Route>
+
+
+    </Switch>
+</div>
   );
 }
 
