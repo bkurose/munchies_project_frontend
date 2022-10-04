@@ -1,0 +1,15 @@
+#searchContainer {
+    background-image: url("https://images.unsplash.com/photo-1629236055174-3e21cae6fa97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
+#searchBar {
+    width: 60%;
+    margin-right: 20%;
+    margin-left: 20%
+}
