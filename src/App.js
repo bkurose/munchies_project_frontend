@@ -5,7 +5,7 @@ import SearchResults from "./components/SearchResults";
 import Navigation from "./components/Navigation";
 import ReviewForm from "./components/ReviewForm";
 import Favorites from "./components/Favorites";
-import TopRestaraunts from "./components/TopRestaraunts";
+import TopRestaurants from "./components/TopRestaurants";
 import {Switch, Route, useHistory} from "react-router-dom";
 
 function App() {
@@ -46,6 +46,8 @@ function App() {
         handleSearchChange={handleSearchChange}
         updateSearchQuery={updateSearchQuery}
         searchFormControl={searchFormControl}
+        restaurants = {restaurants}
+
       />
     </ Route>
 
@@ -63,7 +65,7 @@ function App() {
     </ Route>
 
     <Route exact path = "/toprestaurants">
-    <TopRestaraunts />
+    <TopRestaurants />
     </Route>
 
     <Route exact path = "/new_review">
