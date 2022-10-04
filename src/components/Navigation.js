@@ -13,6 +13,7 @@ function Navigation() {
         <Nav.Link href="/">Home</Nav.Link>
         <Nav.Link href="/favorites">Favorites</Nav.Link>
         <Nav.Link href="/toprestaurants">Top Restaurants</Nav.Link>
+        <Nav.Link href="/new_review">Write a Review!</Nav.Link>
       </Nav>
     </Container>
   </Navbar>

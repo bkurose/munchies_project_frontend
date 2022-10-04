@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import HomePage from "./components/HomePage";
 import SearchResults from "./components/SearchResults";
 import Navigation from "./components/Navigation";
+import ReviewForm from "./components/ReviewForm";
 import Favorites from "./components/Favorites";
 import TopRestaraunts from "./components/TopRestaraunts";
 import {Switch, Route, useHistory} from "react-router-dom";
@@ -63,6 +64,10 @@ function App() {
 
     <Route exact path = "/toprestaurants">
     <TopRestaraunts />
+    </Route>
+
+    <Route exact path = "/new_review">
+    <ReviewForm />
     </Route>
 
     </Switch>
