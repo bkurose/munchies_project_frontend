@@ -17,7 +17,7 @@ function ReviewForm ({restaurant}) {
 
     useEffect(()=>{
         setFormData({...formData, restaurant_id: restaurant.id})
-    })
+    }, [formData])
 
     function handleChange(e) {
         const name = e.target.name

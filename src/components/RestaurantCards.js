@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import Card from 'react-bootstrap/Card';
-
+import ReviewCard from "./ReviewCard";
 
 function RestaurantCards ({ restaurant, handleCardClick }) {
   const [topReview, setTopReview] = useState("")
@@ -28,7 +28,7 @@ function RestaurantCards ({ restaurant, handleCardClick }) {
             <Card.Footer>
               <small className="text-muted">{avReview}</small>
             </Card.Footer>
-            
+            {/* <ReviewCard review={topReview} restaurant={restaurant} /> */}
           </Card>
 
           

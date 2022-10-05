@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { useParams } from 'react-router-dom';
+import ReviewCard from "./ReviewCard";
 import ReviewForm from "./ReviewForm";
 
 function RestaurantDetails () {
@@ -16,15 +17,17 @@ function RestaurantDetails () {
       })
     }, [])
     
-    // useEffect(() => {
-    // fetch(`http://localhost:9292/restaurants/:${id}/allreviews`)
-    //   .then(res => res.json())
-    //   .then(data => console.log(data))
-    // }, [])
+    useEffect(() => {
+    fetch(`http://localhost:9292/restaurants/${id}/allreviews`)
+      .then(res => res.json())
+      .then(reviews => setReviews(reviews))
+    }, [])
 
-    fetch(`http://localhost:9292/restaurants/:${id}/averagerating`)
+    useEffect(()=> {
+    fetch(`http://localhost:9292/restaurants/${id}/averagerating`)
       .then(res => res.json())
       .then(data => setAvReview(data))
+    }, [])
 
     return (
     <div>
@@ -33,6 +36,7 @@ function RestaurantDetails () {
         <p>Description: {currentResto.description}</p>
         <h1>Average Star Rating: {avReview}</h1>
         <ReviewForm restaurant={currentResto} />
+        {reviews.map((review) => <ReviewCard restaurant={currentResto} review={review}/>)}
     </div>
     )
 }
