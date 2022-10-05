@@ -9,7 +9,6 @@ function SearchResults ({ handleSearchChange, updateSearchQuery, searchFormContr
             updateSearchQuery={updateSearchQuery}
             searchFormControl={searchFormControl}
         />
-
     </div>
     )
 }

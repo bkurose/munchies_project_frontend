@@ -1,10 +1,12 @@
 import React from "react";
-import {Link} from "react-router-dom"
 import Container from 'react-bootstrap/Container';
+import Register from "./Register";
 import Nav from 'react-bootstrap/Nav';
+import NewRestaurant from "./NewRestaurant"
 import Navbar from 'react-bootstrap/Navbar';
+import Button from 'react-bootstrap/Button';
 
-function Navigation() {
+function Navigation({handleNewRestaurant, handleNewUser}) {
   return (
     <Navbar bg="light" variant="light">
     <Container>
@@ -13,21 +15,12 @@ function Navigation() {
         <Nav.Link href="/">Home</Nav.Link>
         <Nav.Link href="/favorites">Favorites</Nav.Link>
         <Nav.Link href="/toprestaurants">Top Restaurants</Nav.Link>
-        <Nav.Link href="/new_review">Write a Review!</Nav.Link>
       </Nav>
+      <NewRestaurant handleNewRestaurant={handleNewRestaurant}/>
+      <Register handleNewUser={handleNewUser}/>
     </Container>
   </Navbar>
   )
-
-  // <div>
-
-  //   <button><Link to = "/">HomePage</Link></button>
-
-  //   <button><Link to = "/favorites">Favorites</Link></button>
-
-  //   <button><Link to = "/toprestaurants">Top Restaurants</Link></button>
-
-  // </div>)
 }
 
 export default Navigation;

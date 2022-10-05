@@ -2,11 +2,11 @@ import React from "react";
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 
-function RestaurantCards ({restaurant}) {
+function RestaurantCards ({ restaurant, handleCardClick }) {
     return (
         <CardGroup>
-          <Card>
-            <Card.Img variant="top" src= {restaurant.img} />
+          <Card onClick={() => handleCardClick(restaurant.id)}>
+            <Card.Img variant="top" src={restaurant.image_url} />
             <Card.Body>
               <Card.Title>{restaurant.name}</Card.Title>
               <Card.Text>
@@ -16,7 +16,9 @@ function RestaurantCards ({restaurant}) {
             <Card.Footer>
               <small className="text-muted">{restaurant.rating}</small>
             </Card.Footer>
+            
           </Card>
+
           </CardGroup>
     )
 }
