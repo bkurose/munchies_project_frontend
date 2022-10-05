@@ -15,15 +15,11 @@ function ReviewForm ({restaurant}) {
         user_id: ""
     })
 
-    useEffect(()=>{
-        setFormData({...formData, restaurant_id: restaurant.id})
-    }, [formData])
-
     function handleChange(e) {
         const name = e.target.name
         let value = e.target.value
 
-        setFormData({...formData, [name]: value})
+        setFormData({...formData, restaurant_id: restaurant.id, [name]: value})
     }
 
     function handleSubmit (e) {
