@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Button from 'react-bootstrap/Button';
 import Modal from "react-bootstrap/Modal";
 import ModalBody from "react-bootstrap/ModalBody";
@@ -8,6 +8,38 @@ import ModalTitle from "react-bootstrap/ModalTitle";
 import Form from 'react-bootstrap/Form';
 
 function ReviewForm ({restaurant}) {
+    const [formData, setFormData] = useState({
+        munchie_rating: "",
+        review_text: "",
+        restaurant_id: "",
+        user_id: ""
+    })
+
+    useEffect(()=>{
+        setFormData({...formData, restaurant_id: restaurant.id})
+    })
+
+    function handleChange(e) {
+        const name = e.target.name
+        let value = e.target.value
+
+        setFormData({...formData, [name]: value})
+    }
+
+    function handleSubmit (e) {
+        e.preventDefault()
+        fetch("http://localhost:9292/reviews", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json" 
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(res => res.json())
+            .then(review => alert("New review Successfully Added!"))
+            hideModal()
+    }
 
     const [isOpen, setIsOpen] = React.useState(false);
 
@@ -27,12 +59,15 @@ function ReviewForm ({restaurant}) {
             <Modal.Title>Write a review for {restaurant.name}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Form>
+            <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formReviewMunchie">
-                    <Form.Control type="integer" placeholder="How many munchies? 1-5" />
+                    <Form.Control onChange={handleChange} name="munchie_rating" type="integer" placeholder="How many munchies? 1-5" />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formReviewUser">
+                    <Form.Control onChange={handleChange} name="user_id" type="integer" placeholder="User ID number?" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formReviewText">
-                    <Form.Control type="text" placeholder="Leave a description of your experience..." />
+                    <Form.Control  onChange={handleChange} name="review_text" type="text" placeholder="Leave a description of your experience..." />
                     <Form.Text className="text-muted">
                         Please be breif and constructive!
                     </Form.Text>

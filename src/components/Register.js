@@ -31,8 +31,10 @@ function Register ({handleNewUser}) {
                 body: JSON.stringify(formData)
             })
             .then(res => res.json())
-            .then(user => handleNewUser(user))
-            alert("New User Successfully Added!")
+            .then(user => {
+                handleNewUser(user)
+                alert(`New User Successfully Added! Your User ID is ${user.id}`)
+            })
             hideModal()
     }
 
