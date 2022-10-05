@@ -24,11 +24,25 @@ function ReviewCard ({review, restaurant}) {
           })
           alert("Review Deleted!")
     }
-
+    function munchiesAmount (expr) {
+        if (expr == 1) 
+            {return "🍴"}
+            else if (expr == 2)
+                {return "🍴🍴"}
+           else if (expr == 3)
+                {return "🍴🍴🍴"}
+              
+            else if (expr == 4)
+               { return "🍴🍴🍴🍴"}
+             
+            else
+                {return "🍴🍴🍴🍴🍴"}    
+}
     return (
-        <Card style={{ width: '18rem' }}>
+        <Card id = "card" style={{ width: '18rem' }}>
             <Card.Body>
-                <Card.Title>{review.munchie_rating}🍴 munchies!</Card.Title>
+                <Card.Title> {munchiesAmount(review.munchie_rating)}
+                </Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">Review by: {reviewUser.first_name}</Card.Subtitle>
                 <Card.Text>
                     {review.review_text}
