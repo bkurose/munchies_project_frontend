@@ -24,20 +24,20 @@ function ReviewCard ({review, restaurant}) {
           })
           alert("Review Deleted!")
     }
-    function munchiesAmount (expr) {
-        if (expr == 1) 
-            {return "🍴"}
-            else if (expr == 2)
-                {return "🍴🍴"}
-           else if (expr == 3)
-                {return "🍴🍴🍴"}
-              
-            else if (expr == 4)
-               { return "🍴🍴🍴🍴"}
-             
-            else
-                {return "🍴🍴🍴🍴🍴"}    
-}
+
+function munchiesAmount (expr) {
+    if (expr == 1) 
+      { return <><span>🍴</span><span style={{opacity: "0.2"}}>🍴🍴🍴🍴</span></>}
+      else if (expr == 2)
+        { return <><span>🍴🍴</span><span style={{opacity: "0.2"}}>🍴🍴🍴</span></>}
+      else if (expr == 3)
+        { return <><span>🍴🍴🍴</span><span style={{opacity: "0.2"}}>🍴🍴</span></>}
+      else if (expr == 4)
+        { return <><span>🍴🍴🍴🍴</span><span style={{opacity: "0.2"}}>🍴</span></>}
+      else
+        { return <><span>🍴🍴🍴🍴🍴</span></>}
+  }
+
     return (
         <Card id = "card" style={{ width: '18rem' }}>
             <Card.Body>

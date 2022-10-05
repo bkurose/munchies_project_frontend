@@ -3,18 +3,16 @@ import SearchBar from "./SearchBar";
 import RestaurantCards from "./RestaurantCards";
 import CardGroup from 'react-bootstrap/CardGroup';
 
-function HomePage ({ handleSearchChange, updateSearchQuery, searchFormControl, restaurants, handleCardClick }) {
+function HomePage ({ updateSearchQuery, restaurants, handleCardClick }) {
     let exampleRestaurants = []
     
     exampleRestaurants = restaurants.slice(0,3)
 
     return (
             <div>
-                <div id="searchContainer">
+                <div id="searchHome">
                     <SearchBar
-                        handleSearchChange={handleSearchChange}
                         updateSearchQuery={updateSearchQuery}
-                        searchFormControl={searchFormControl}
                     />
                 </div>
                 <div>

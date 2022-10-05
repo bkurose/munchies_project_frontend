@@ -1,4 +1,4 @@
-#searchContainer {
+#searchHome {
     background-image: url("https://i.postimg.cc/j2vSs225/photo-1576866209830-589e1bfbaa4d-2.jpg");
     width: 100%;
     height: 400px;
@@ -7,7 +7,17 @@
     align-items: center;
     background-size: flex;
     background-repeat: no-repeat;
+}
 
+#searchResultsPage {
+    background-image: url("https://i.postimg.cc/JtwcvYCc/luisa-brimble-2-Rr-BE90w0-T8-unsplash-edit.jpg");
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: flex;
+    background-repeat: no-repeat;
 }
 
 

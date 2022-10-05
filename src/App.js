@@ -10,7 +10,6 @@ import TopRestaurants from "./components/TopRestaurants";
 import {Switch, Route, useHistory} from "react-router-dom";
 
 function App() {
-  const [ searchFormControl, setSearchFormControl ] = useState("") //controls form onChange
   const [ searchQuery, setSearchQuery ] = useState("") //sets the search query
   const [ restaurants, setRestaurants ] = useState([])
   const [ users, setUsers ] = useState([])
@@ -38,19 +37,9 @@ function App() {
     setRestaurants([...restaurants, restaurant])
   }
 
-  function handleSearchChange(event) {
-    setSearchFormControl(event.target.value)
-  }
-
   function updateSearchQuery(newSearch){
     setSearchQuery(newSearch)
   }
-
-  const searchedRestaurants = restaurants.filter((restaurant) => {
-    if(searchQuery.length > 0){
-      return restaurant.name.toLowerCase().includes(searchQuery.toLowerCase()) || restaurant.location.toLowerCase().includes(searchQuery.toLowerCase())
-    }
-  })
 
   function handleCardClick(id) {
     history.push(`restaurants/${id}`)
@@ -68,9 +57,7 @@ function App() {
 
     <Route exact path = "/">
       <HomePage
-        handleSearchChange={handleSearchChange}
         updateSearchQuery={updateSearchQuery}
-        searchFormControl={searchFormControl}
         restaurants = {restaurants}
         handleCardClick={handleCardClick}
 
@@ -79,11 +66,10 @@ function App() {
 
     <Route exact path = "/search">
       <SearchResults 
-        handleSearchChange={handleSearchChange}
         updateSearchQuery={updateSearchQuery}
-        searchFormControl={searchFormControl}
-        restaurants={searchedRestaurants}
-        handleCardClick
+        restaurants={restaurants}
+        handleCardClick={handleCardClick}
+        searchQuery={searchQuery}
       />
     </Route>
     

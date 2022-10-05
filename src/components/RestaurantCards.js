@@ -17,17 +17,17 @@ function RestaurantCards ({ restaurant, handleCardClick }) {
   }, [])
   function munchiesAmount (expr) {
     if (expr == 1) 
-        {return "🍴"}
-        else if (expr == 2)
-            {return "🍴🍴"}
-       else if (expr == 3)
-            {return "🍴🍴🍴"}
-          
-        else if (expr == 4)
-           { return "🍴🍴🍴🍴"}
-         
-        else
-            {return "🍴🍴🍴🍴🍴"}   }
+      { return <><span>🍴</span><span style={{opacity: "0.2"}}>🍴🍴🍴🍴</span></>}
+      else if (expr == 2)
+        { return <><span>🍴🍴</span><span style={{opacity: "0.2"}}>🍴🍴🍴</span></>}
+      else if (expr == 3)
+        { return <><span>🍴🍴🍴</span><span style={{opacity: "0.2"}}>🍴🍴</span></>}
+      else if (expr == 4)
+        { return <><span>🍴🍴🍴🍴</span><span style={{opacity: "0.2"}}>🍴</span></>}
+      else
+        { return <><span>🍴🍴🍴🍴🍴</span></>}
+  }
+  
   return (
        
           <Card onClick={() => handleCardClick(restaurant.id)}>
@@ -35,10 +35,10 @@ function RestaurantCards ({ restaurant, handleCardClick }) {
             <Card.Body>
               <Card.Title class = "text">{restaurant.name}</Card.Title>
               <Card.Text>
-              {munchiesAmount (avReview)}
+              Average Review: {munchiesAmount (avReview)}
               </Card.Text>
               <div class = "text">
-                Top Review
+                Top Review:
               </div>
             </Card.Body>
             <ReviewCard review={topReview} restaurant={restaurant} />

@@ -29,12 +29,25 @@ function RestaurantDetails () {
       .then(data => setAvReview(data))
     }, [])
 
+    function munchiesAmount (expr) {
+      if (expr == 1) 
+        { return <><span>🍴</span><span style={{opacity: "0.2"}}>🍴🍴🍴🍴</span></>}
+        else if (expr == 2)
+          { return <><span>🍴🍴</span><span style={{opacity: "0.2"}}>🍴🍴🍴</span></>}
+        else if (expr == 3)
+          { return <><span>🍴🍴🍴</span><span style={{opacity: "0.2"}}>🍴🍴</span></>}
+        else if (expr == 4)
+          { return <><span>🍴🍴🍴🍴</span><span style={{opacity: "0.2"}}>🍴</span></>}
+        else
+          { return <><span>🍴🍴🍴🍴🍴</span></>}
+    }
+
     return (
     <div>
         <img src={currentResto.image_url} />
         <h3>Restaurant: {currentResto.name}</h3>
         <p>Description: {currentResto.description}</p>
-        <h1>Average Munchie Rating: {avReview}</h1>
+        <h1>Average Munchie Rating: {munchiesAmount(avReview)}</h1>
         <ReviewForm restaurant={currentResto} />
         {reviews.map((review) => <ReviewCard restaurant={currentResto} review={review}/>)}
     </div>
