@@ -1,16 +1,19 @@
 #searchContainer {
     background-image: url("https://i.postimg.cc/j2vSs225/photo-1576866209830-589e1bfbaa4d-2.jpg");
+    width: 100%;
     height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-size: auto;
+    background-size: flex;
     background-repeat: no-repeat;
-    background-size: cover;
+
 }
+
 
 #searchBar {
     width: 40%;
     margin-right: 30%;
     margin-left: 30%
 }
+

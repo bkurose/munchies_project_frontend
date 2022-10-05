@@ -8,9 +8,9 @@ import Button from 'react-bootstrap/Button';
 
 function Navigation({handleNewRestaurant, handleNewUser}) {
   return (
-    <Navbar bg="light" variant="light">
+    <Navbar id = "navbar" bg="light" variant="light">
     <Container>
-      <img class="logo" src="https://i.postimg.cc/j5RfVyn7/logo-removebg-preview.png" style={{height: "50px"}}/>
+      <img  class="logo" src="https://i.postimg.cc/j5RfVyn7/logo-removebg-preview.png" style={{height: "50px"}}/>
       <Nav className="me-auto">
         <Nav.Link href="/">Home</Nav.Link>
         <Nav.Link href="/favorites">Favorites</Nav.Link>

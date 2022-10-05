@@ -54,6 +54,7 @@ function App() {
 
   function handleCardClick(id) {
     history.push(`restaurants/${id}`)
+    window.location.reload()
   }
 
   return (   

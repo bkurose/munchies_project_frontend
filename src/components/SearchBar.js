@@ -23,7 +23,7 @@ function SearchBar ({ updateSearchQuery, searchFormControl, handleSearchChange }
                 </Form.Group>
                 <Form.Group as={Col} md="auto" className="mb-3" controlId="searchSubmit">
                     <Button class="searchButton" variant="primary" type="submit">
-                        Submit
+                        Search
                     </Button>
                 </Form.Group>
             </Row>
