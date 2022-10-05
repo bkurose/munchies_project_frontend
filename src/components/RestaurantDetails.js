@@ -5,6 +5,8 @@ import ReviewForm from "./ReviewForm";
 function RestaurantDetails () {
     const [ currentResto, setCurrentResto ] = useState({})
     const { id } = useParams()
+    const [reviews, setReviews] = useState([])
+    const [avReview, setAvReview] = useState("")
 
     useEffect(() => {
       fetch(`http://localhost:9292/restaurants/${id}`)
@@ -13,12 +15,23 @@ function RestaurantDetails () {
       setCurrentResto(resto)
       })
     }, [])
+    
+    // useEffect(() => {
+    // fetch(`http://localhost:9292/restaurants/:${id}/allreviews`)
+    //   .then(res => res.json())
+    //   .then(data => console.log(data))
+    // }, [])
+
+    fetch(`http://localhost:9292/restaurants/:${id}/averagerating`)
+      .then(res => res.json())
+      .then(data => setAvReview(data))
+
     return (
     <div>
         <img src={currentResto.image_url} />
         <h3>Restaurant: {currentResto.name}</h3>
         <p>Description: {currentResto.description}</p>
-        <h1>Average Star Rating: </h1>
+        <h1>Average Star Rating: {avReview}</h1>
         <ReviewForm restaurant={currentResto} />
     </div>
     )

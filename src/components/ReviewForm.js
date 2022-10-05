@@ -69,7 +69,7 @@ function ReviewForm ({restaurant}) {
                 <Form.Group className="mb-3" controlId="formReviewText">
                     <Form.Control  onChange={handleChange} name="review_text" type="text" placeholder="Leave a description of your experience..." />
                     <Form.Text className="text-muted">
-                        Please be breif and constructive!
+                        Please be brief and constructive!
                     </Form.Text>
                 </Form.Group>
                 <Button variant="primary" type="submit">

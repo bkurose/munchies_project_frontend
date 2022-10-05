@@ -49,10 +49,10 @@ function NewRestaurant ({handleNewRestaurant}) {
   
     return (
       <>
-        <Button variant="outline-dark" onClick={showModal}>Add Your Buisnesss to Munchies</Button>
+        <Button variant="outline-dark" onClick={showModal}>Add Your Business to Munchies</Button>
         <Modal show={isOpen} onHide={hideModal}>
           <Modal.Header>
-            <Modal.Title>Don't see your buisness listed here?</Modal.Title>
+            <Modal.Title>Don't see your business listed here?</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Form onSubmit={handleSubmit}>
