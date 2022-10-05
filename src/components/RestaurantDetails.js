@@ -34,7 +34,7 @@ function RestaurantDetails () {
         <img src={currentResto.image_url} />
         <h3>Restaurant: {currentResto.name}</h3>
         <p>Description: {currentResto.description}</p>
-        <h1>Average Star Rating: {avReview}</h1>
+        <h1>Average Munchie Rating: {avReview}</h1>
         <ReviewForm restaurant={currentResto} />
         {reviews.map((review) => <ReviewCard restaurant={currentResto} review={review}/>)}
     </div>
