@@ -34,8 +34,9 @@ function RestaurantCards ({ restaurant, handleCardClick }) {
             <Card.Img id = "img" variant="top" src={restaurant.image_url} />
             <Card.Body>
               <Card.Title class = "text">{restaurant.name}</Card.Title>
-              <Card.Text>
-              Average Review: {munchiesAmount (avReview)}
+              <Card.Text >
+              <span class = "text" >Average Review:</span> 
+               {munchiesAmount (avReview)}
               </Card.Text>
               <div class = "text">
                 Top Review:
