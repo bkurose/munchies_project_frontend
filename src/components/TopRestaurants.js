@@ -5,12 +5,11 @@ import ReviewForm from "./ReviewForm";
 
 function TopRestaurants ({restaurant}) {
     const [ currentResto, setCurrentResto ] = useState({})
-    const { id } = useParams()
     const [reviews, setReviews] = useState([])
     const [avReview, setAvReview] = useState("")
 
     useEffect(() => {
-      fetch(`http://localhost:9292/restaurants/${id}`)
+      fetch(`http://localhost:9292/restaurants/${restaurant.id}`)
       .then(res => res.json())
       .then(resto => {
       setCurrentResto(resto)
@@ -18,13 +17,13 @@ function TopRestaurants ({restaurant}) {
     }, [])
     
     useEffect(() => {
-    fetch(`http://localhost:9292/restaurants/${id}/allreviews`)
+    fetch(`http://localhost:9292/restaurants/${restaurant.id}/allreviews`)
       .then(res => res.json())
       .then(reviews => setReviews(reviews))
     }, [])
 
     useEffect(()=> {
-    fetch(`http://localhost:9292/restaurants/${id}/averagerating`)
+    fetch(`http://localhost:9292/restaurants/${restaurant.id}/averagerating`)
       .then(res => res.json())
       .then(data => setAvReview(data))
     }, [])
@@ -45,11 +44,11 @@ function TopRestaurants ({restaurant}) {
     return (
     <div>
         <img src={restaurant.image_url} />
-        <h3>Restaurant: {restaurant.name}</h3>
-        <p>Description: {restaurant.description}</p>
-        <h1>Average Munchie Rating: {munchiesAmount(avReview)}</h1>
-        <ReviewForm restaurant={restaurant} />
-        {reviews.map((review) => <ReviewCard restaurant={restaurant} review={review}/>)}
+        <h3 class = "header">Restaurant: {restaurant.name}</h3>
+        <p class = "text"> {restaurant.description}</p>
+        <h3 class = "header">Overall: {munchiesAmount(avReview)}</h3>
+        <ReviewForm restaurant= {restaurant} />
+        {reviews.map((review) => <ReviewCard restaurant= {restaurant} review={review}/>)}
     </div>
     )
 }

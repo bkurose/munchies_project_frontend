@@ -47,8 +47,8 @@ function munchiesAmount (expr) {
                 <Card.Text>
                     {review.review_text}
                 </Card.Text>
-                <UpdateReview review={review} restaurant={restaurant} user={reviewUser} />
-                <Button variant="outline-dark" onClick={handleDelete}>Delete?</Button>
+                <UpdateReview class = "text" review={review} restaurant={restaurant} user={reviewUser} />
+                <Button class = "text" variant="outline-dark" onClick={handleDelete}>Delete?</Button>
             </Card.Body>
             
         </Card>

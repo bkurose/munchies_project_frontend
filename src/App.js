@@ -85,7 +85,7 @@ function App() {
     <Favorites />
     </ Route>
 
-    <Route exact path = "/toprestaurants">
+    <Route exact path = "/toprestaurant">
     {topRestaurants.map( rest => <TopRestaurants restaurant= {rest}/>)}
     </Route>
 

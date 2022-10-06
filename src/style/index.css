@@ -31,10 +31,14 @@
     justify-content: center;
     align-items: center;
     margin-top: 10px;
+    color: rgba(0, 0, 0, 0.55); 
 }
 .text {
     color: rgba(0, 0, 0, 0.55);
     font-size: 120%;
+}
+.header {
+    color: rgba(0, 0, 0, 0.55);  
 }
 #img {
     display: flex;
@@ -44,4 +48,9 @@
     align-content: center;
     margin-top: 10px;
    
+}
+
+.btn-outline-dark {
+    color: rgba(0, 0, 0, 0.55);
+    border-color:rgba(0, 0, 0, 0.55);
 }

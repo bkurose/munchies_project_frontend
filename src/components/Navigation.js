@@ -14,7 +14,7 @@ function Navigation({handleNewRestaurant, handleNewUser}) {
       <Nav className="me-auto">
         <Nav.Link href="/">Home</Nav.Link>
         <Nav.Link href="/favorites">Favorites</Nav.Link>
-        <Nav.Link href="/toprestaurants">Top Restaurants</Nav.Link>
+        <Nav.Link href="/toprestaurant">Top Restaurant</Nav.Link>
       </Nav>
       <NewRestaurant handleNewRestaurant={handleNewRestaurant}/>
       <Register handleNewUser={handleNewUser}/>
