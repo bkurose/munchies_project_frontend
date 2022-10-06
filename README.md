@@ -25,13 +25,13 @@ Built by: Kenneth Latour, Tim Montgomery, Ben Kurose
 munchies is designed to be a innovative platform where foodies from all over are able to come together and share their thoughts and ideas about their favorite places to eat.
 
 Users will be able to:
--Sign-up to recieve a unique ID for posting
--Add their favorite restaurants not already in the database
--Leave reviews for their favorite restaurants
--Modify any existing reviews
--Delete outdated/unwanted reviews permanently.
--Search for their favorite restaurants by name
--See average rating for restaurants
+* Sign-up to recieve a unique ID for posting
+* Add their favorite restaurants not already in the database
+* Leave reviews for their favorite restaurants
+* Modify any existing reviews
+* Delete outdated/unwanted reviews permanently.
+* Search for their favorite restaurants by name
+* See average rating for restaurants
 
 ## Project Status
 Project is: Complete
